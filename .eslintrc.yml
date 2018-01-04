@@ -1,0 +1,24 @@
+parser: babel-eslint
+extends: airbnb
+plugins:
+  - prettier
+  - react
+  - jsx-a11y
+  - import
+  - flowtype
+rules:
+  react/jsx-filename-extension: off
+  import/extensions: off
+  import/no-unresolved: off
+  import/no-extraneous-dependencies: off
+  react/forbid-prop-types: off
+  jsx-a11y/anchor-is-valid: off
+  comma-dangle:
+    - error
+    - always-multiline
+  quotes:
+    - error
+    - single
+  max-len:
+    - error
+    - 80
