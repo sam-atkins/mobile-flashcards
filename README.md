@@ -1,8 +1,127 @@
+# React Native Project: Mobile Flashcards
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![CircleCI](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master.svg?style=svg)](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master)
+[![flow](https://img.shields.io/badge/type_checker-flow-green.svg)](https://flow.org/)
+
+## Description
+This is the third project for the [React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
+
+It is a mobile application (Android or iOS) that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
+
+The app is built with React Native.
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+- [Develop](#develop)
+  - [How to run](#how-to-run)
+  - [Static Type Checking](#static-type-checking)
+  - [Tests](#tests)
+  - [Continuous Integration](#continuous-integration)
+  - [Style Guide](#style-guide)
+- [Release](#release)
+  - [Build](#build)
+  - [Deploy](#deploy)
+  - [Demo](#demo)
+- [Inspiration and Information](#inspiration-and-information)
+- [Expo React Native Documentation](#expo-react-native-documentation)
+  - [Expo Table of Contents](#expo-table-of-contents)
+
+## Getting started
+
+### Installation
+
+The React Native app was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
+
+**Dependencies:**
+
+* Yarn package manager
+* `create-react-native-app`
+* Editor / IDE
+* Expo app on a mobile device, and/or Xcode (for the iOS simulator)
+
+To get started with this repository:
+
+```sh
+# git clone the repository e.g. into a <projects> folder
+cd <projects>
+# git clone with ssh
+git@github.com:cubiio/mobile-flashcards.git
+
+# or git clone with HTTPS
+git clone https://github.com/cubiio/mobile-flashcards.git
+
+# change directory into the cloned repo
+cd mobile-flashcards
+
+# install the dependencies
+yarn install
+```
+
+## Develop
+
+### How to run
+
+From the terminal, in the project folder:
+
+```sh
+yarn start
+```
+
+A menu appears in the terminal with options. Select the appropriate option e.g. `i` to launch the iOS XCode simulator.
+
+### Static Type Checking
+
+This project uses Flow static type checking. For reference, the Flow documentation is [here](https://flow.org/en/docs/).
+
+### Tests
+
+[Jest](https://facebook.github.io/jest/) is used for tests in the React app. To run the test suite, use this command:
+
+```sh
+yarn test
+```
+
+### Continuous Integration
+
+Circle CI is set-up for this repo. Pushes made to remote will trigger a Circle build. The config is in the `.circle` folder.
+
+### Style Guide
+
+This repo uses [ESLint](https://eslint.org/) with [Prettier](https://github.com/prettier/prettier) formatting.
+
+The ESLint config extends from AirBnB, with a few changes. Refer to the `.eslintrc.yml` file in the root of the repo for info on the changes.
+
+## Release
+
+### Build
+
+[Placeholder]
+
+### Deploy
+
+[Placeholder]
+
+### Demo
+
+[Placeholder]
+
+## Inspiration and Information
+
+[Placeholder]
+
+***
+## Expo React Native Documentation
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
 
-## Table of Contents
+### Expo Table of Contents
+
 
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
