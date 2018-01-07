@@ -18,7 +18,7 @@ The app is built with React Native.
   - [Installation](#installation)
 - [Develop](#develop)
   - [How to run](#how-to-run)
-  - [Static Type Checking](#static-type-checking)
+  - [Flow - Type Checking](#flow-type-checking)
   - [Tests](#tests)
   - [Continuous Integration](#continuous-integration)
   - [Style Guide](#style-guide)
@@ -73,9 +73,11 @@ yarn start
 
 A menu appears in the terminal with options. Select the appropriate option e.g. `i` to launch the iOS XCode simulator.
 
-### Static Type Checking
+### Flow - Type Checking
 
 This project uses Flow static type checking. For reference, the Flow documentation is [here](https://flow.org/en/docs/).
+
+Add `// @flow` to the top of a file. Run `yarn flow` to check the files for type errors.
 
 ### Tests
 
@@ -111,7 +113,8 @@ The ESLint config extends from AirBnB, with a few changes. Refer to the `.eslint
 
 ## Inspiration and Information
 
-[Placeholder]
+- [Organizing a React Native Project](https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0)
+- [How to better organize your React applications?](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
 
 ***
 ## Expo React Native Documentation
