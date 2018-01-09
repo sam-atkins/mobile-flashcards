@@ -18,7 +18,6 @@ The app is built with React Native.
   - [Installation](#installation)
 - [Develop](#develop)
   - [How to run](#how-to-run)
-  - [Flow - Type Checking](#flow-type-checking)
   - [Tests](#tests)
   - [Continuous Integration](#continuous-integration)
   - [Style Guide](#style-guide)
@@ -72,12 +71,6 @@ yarn start
 ```
 
 A menu appears in the terminal with options. Select the appropriate option e.g. `i` to launch the iOS XCode simulator.
-
-### Flow - Type Checking
-
-This project uses Flow static type checking. For reference, the Flow documentation is [here](https://flow.org/en/docs/).
-
-Add `// @flow` to the top of a file. Run `yarn flow` to check the files for type errors.
 
 ### Tests
 
