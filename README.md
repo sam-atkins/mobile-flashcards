@@ -2,8 +2,7 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![CircleCI](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master.svg?style=svg)](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master)
-[![flow](https://img.shields.io/badge/type_checker-flow-green.svg)](https://flow.org/)
+[![CircleCI](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master.svg?style=svg)]
 
 ## Description
 This is the third project for the [React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
