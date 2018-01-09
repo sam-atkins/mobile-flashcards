@@ -1,8 +1,9 @@
 // @flow
 
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { MainNavigator } from './app/config/routes';
+import AppStatusBar from './app/components/AppStatusBar';
 
 type Props = {};
 
@@ -10,7 +11,7 @@ export default class App extends React.Component<Props> {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <Text>App.js !</Text>
+        <AppStatusBar backgroundColor="#292477" barStyle="light-content" />
         <MainNavigator />
       </View>
     );
