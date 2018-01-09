@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 const deckData = {
   React: {
@@ -27,15 +27,28 @@ const deckData = {
   },
 };
 
-const DecksView = () => (
-  <View>
-    <Text>Welcome to Mobile Flashcards!</Text>
-    <Text>What do you want to learn today?</Text>
-    {Object.keys(deckData).map((key) => {
-      const { title } = deckData[key];
-      return <Text key={title}>{title}</Text>;
-    })}
-  </View>
-);
+class DecksView extends Component {
+  render() {
+    return (
+      <View>
+        <Text>Welcome to Mobile Flashcards!</Text>
+        <Text>What do you want to learn today?</Text>
+        {Object.keys(deckData).map((key) => {
+          const { title, questions } = deckData[key];
+          return (
+            <View key={title}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('QuizOverview')}
+              >
+                <Text>{title}</Text>
+                <Text>{questions.length} cards</Text>
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </View>
+    );
+  }
+}
 
 export default DecksView;

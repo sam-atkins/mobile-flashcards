@@ -5,6 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import DecksView from '../components/DecksView';
 import CreateQuiz from '../components/CreateQuiz';
 import Settings from '../components/Settings';
+import QuizOverview from '../components/QuizOverview';
 import {
   NAV_HEADER_BACKGROUND,
   NAV_HEADER_TINT,
@@ -74,6 +75,9 @@ export const Tabs = TabNavigator(
 export const MainNavigator = StackNavigator({
   Home: {
     screen: Tabs,
+  },
+  QuizOverview: {
+    screen: QuizOverview,
   },
   CreateQuiz: {
     screen: CreateQuiz,
