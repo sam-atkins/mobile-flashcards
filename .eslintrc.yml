@@ -13,6 +13,7 @@ rules:
   import/no-extraneous-dependencies: off
   react/forbid-prop-types: off
   jsx-a11y/anchor-is-valid: off
+  import/prefer-default-export: off
   comma-dangle:
     - error
     - always-multiline
