@@ -29,7 +29,8 @@ const deckData = {
 
 const DecksView = () => (
   <View>
-    <Text>Main decks view</Text>
+    <Text>Welcome to Mobile Flashcards!</Text>
+    <Text>What do you want to learn today?</Text>
     {Object.keys(deckData).map((key) => {
       const { title } = deckData[key];
       return <Text key={title}>{title}</Text>;
