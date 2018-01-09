@@ -5,6 +5,14 @@ import { FontAwesome } from '@expo/vector-icons';
 import DecksView from '../components/DecksView';
 import CreateQuiz from '../components/CreateQuiz';
 import Settings from '../components/Settings';
+import {
+  NAV_HEADER_BACKGROUND,
+  NAV_HEADER_TINT,
+  TAB_BAR_ACTIVE_TINT_ANDROID,
+  TAB_BAR_ACTIVE_TINT_IOS,
+  TAB_BAR_BACKGROUND_ANDROID,
+  TAB_BAR_BACKGROUND_IOS,
+} from './colours';
 
 export const Tabs = TabNavigator(
   {
@@ -41,10 +49,16 @@ export const Tabs = TabNavigator(
       header: null,
     },
     tabBarOptions: {
-      activeTintColor: Platform.OS === 'ios' ? '#292477' : '#fff',
+      activeTintColor:
+        Platform.OS === 'ios'
+          ? TAB_BAR_ACTIVE_TINT_IOS
+          : TAB_BAR_ACTIVE_TINT_ANDROID,
       style: {
         height: 56,
-        backgroundColor: Platform.OS === 'ios' ? '#fff' : '#292477',
+        backgroundColor:
+          Platform.OS === 'ios'
+            ? TAB_BAR_BACKGROUND_IOS
+            : TAB_BAR_BACKGROUND_ANDROID,
         shadowColor: 'rgba(0, 0, 0, 0.24)',
         shadowOffset: {
           width: 0,
@@ -64,9 +78,9 @@ export const MainNavigator = StackNavigator({
   CreateQuiz: {
     screen: CreateQuiz,
     navigationOptions: {
-      headerTintColor: '#fff',
+      headerTintColor: NAV_HEADER_TINT,
       headerStyle: {
-        backgroundColor: '#292477',
+        backgroundColor: NAV_HEADER_BACKGROUND,
       },
     },
   },
