@@ -2,8 +2,7 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![CircleCI](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master.svg?style=svg)](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master)
-[![flow](https://img.shields.io/badge/type_checker-flow-green.svg)](https://flow.org/)
+[![CircleCI](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master.svg?style=svg)]
 
 ## Description
 This is the third project for the [React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
@@ -18,7 +17,6 @@ The app is built with React Native.
   - [Installation](#installation)
 - [Develop](#develop)
   - [How to run](#how-to-run)
-  - [Static Type Checking](#static-type-checking)
   - [Tests](#tests)
   - [Continuous Integration](#continuous-integration)
   - [Style Guide](#style-guide)
@@ -73,10 +71,6 @@ yarn start
 
 A menu appears in the terminal with options. Select the appropriate option e.g. `i` to launch the iOS XCode simulator.
 
-### Static Type Checking
-
-This project uses Flow static type checking. For reference, the Flow documentation is [here](https://flow.org/en/docs/).
-
 ### Tests
 
 [Jest](https://facebook.github.io/jest/) is used for tests in the React app. To run the test suite, use this command:
@@ -111,7 +105,8 @@ The ESLint config extends from AirBnB, with a few changes. Refer to the `.eslint
 
 ## Inspiration and Information
 
-[Placeholder]
+- [Organizing a React Native Project](https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0)
+- [How to better organize your React applications?](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
 
 ***
 ## Expo React Native Documentation
