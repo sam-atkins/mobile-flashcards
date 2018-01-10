@@ -27,7 +27,7 @@ const deckData = {
   },
 };
 
-const DecksView = props => (
+const HomeView = props => (
   <View>
     <Text>Welcome to Mobile Flashcards!</Text>
     <Text>What do you want to learn today?</Text>
@@ -52,4 +52,4 @@ const DecksView = props => (
   </View>
 );
 
-export default DecksView;
+export default HomeView;

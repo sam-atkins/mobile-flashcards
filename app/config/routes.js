@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
-import DecksView from '../components/DecksView';
+import HomeView from '../containers/HomeView';
 import CreateQuiz from '../components/CreateQuiz';
 import Settings from '../components/Settings';
 import QuizOverview from '../components/QuizOverview';
@@ -17,8 +17,8 @@ import {
 
 export const Tabs = TabNavigator(
   {
-    DecksView: {
-      screen: DecksView,
+    HomeView: {
+      screen: HomeView,
       navigationOptions: {
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => (
