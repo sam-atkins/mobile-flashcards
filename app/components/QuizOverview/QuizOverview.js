@@ -18,7 +18,7 @@ const QuizOverview = (props) => {
       <Text>{title}</Text>
       <Text>{questions.length} cards</Text>
       <ButtonWrapper>
-        <PrimaryButton primary text="Start quiz" />
+        <PrimaryButton text="Start quiz" />
         <SecondaryButton text="Add new question" />
       </ButtonWrapper>
     </StyledView>
