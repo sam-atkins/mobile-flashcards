@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import WelcomeText from '../../components/WelcomeText';
 
 const deckData = {
   React: {
@@ -29,8 +30,7 @@ const deckData = {
 
 const HomeView = props => (
   <View>
-    <Text>Welcome to Mobile Flashcards!</Text>
-    <Text>What do you want to learn today?</Text>
+    <WelcomeText />
     {Object.keys(deckData).map((key) => {
       const { title, questions } = deckData[key];
       return (

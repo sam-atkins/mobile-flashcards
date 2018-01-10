@@ -79,7 +79,7 @@ export const MainNavigator = StackNavigator({
   QuizOverview: {
     screen: QuizOverview,
     navigationOptions: {
-      title: 'Quiz',
+      title: 'Deck',
     },
   },
   CreateQuiz: {
