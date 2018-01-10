@@ -1,24 +1,20 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-// const QuizOverview = ({ title, questions }) => (
-//   <View>
-//     <Text>{title}</Text>
-//     <Text>{questions.length} cards</Text>
-//   </View>
-// );
+const QuizOverview = (props) => {
+  const { title, questions } = props.navigation.state.params;
 
-const QuizOverview = () => (
-  <View>
-    <Text>title</Text>
-    <Text>questions.length cards</Text>
-  </View>
-);
+  return (
+    <View>
+      <Text>{title}</Text>
+      <Text>{questions.length} cards</Text>
+    </View>
+  );
+};
 
-// QuizOverview.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   questions: PropTypes.array.isRequired,
-// };
+QuizOverview.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default QuizOverview;
