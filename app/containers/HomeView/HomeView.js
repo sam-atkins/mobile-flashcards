@@ -1,9 +1,12 @@
 import React from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { connect } from 'react-redux';
 import WelcomeText from '../../components/WelcomeText';
+import { selectDeckTitleAndQuestions } from '../../selectors/deckSelectors';
 
-const deckData = {
-  React: {
+// TODO replace with `content` from Redux store via selector once set-up
+const hardCodedContent = [
+  {
     title: 'React',
     questions: [
       {
@@ -16,7 +19,7 @@ const deckData = {
       },
     ],
   },
-  JavaScript: {
+  {
     title: 'JavaScript',
     questions: [
       {
@@ -26,30 +29,42 @@ const deckData = {
       },
     ],
   },
+];
+
+const HomeView = (props) => {
+  const renderItemList = ({ item }) => {
+    const { title, questions } = item;
+    return (
+      <TouchableOpacity
+        onPress={() =>
+          props.navigation.navigate('QuizOverview', {
+            title,
+            questions,
+          })
+        }
+      >
+        <Text>{title}</Text>
+        <Text>{questions.length} cards</Text>
+      </TouchableOpacity>
+    );
+  };
+
+  return (
+    <View>
+      <WelcomeText />
+      <View>
+        <FlatList
+          data={hardCodedContent}
+          renderItem={renderItemList}
+          keyExtractor={item => item.title}
+        />
+      </View>
+    </View>
+  );
 };
 
-const HomeView = props => (
-  <View>
-    <WelcomeText />
-    {Object.keys(deckData).map((key) => {
-      const { title, questions } = deckData[key];
-      return (
-        <View key={title}>
-          <TouchableOpacity
-            onPress={() =>
-              props.navigation.navigate('QuizOverview', {
-                title,
-                questions,
-              })
-            }
-          >
-            <Text>{title}</Text>
-            <Text>{questions.length} cards</Text>
-          </TouchableOpacity>
-        </View>
-      );
-    })}
-  </View>
-);
+const mapStateToProps = state => ({
+  content: selectDeckTitleAndQuestions(state),
+});
 
-export default HomeView;
+export default connect(mapStateToProps)(HomeView);
