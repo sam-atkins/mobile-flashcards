@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import QuestionText from '../../components/QuestionText';
 
 const RunQuiz = ({
   currentQuestion,
@@ -21,11 +22,7 @@ const RunQuiz = ({
   return (
     <View>
       <Text>Run Quiz container is here</Text>
-      {showQuestion && (
-        <View>
-          <Text>{questions[currentQuestion].question}</Text>
-        </View>
-      )}
+      {showQuestion && <QuestionText questions={questions} />}
       {showAnswer && (
         <View>
           <Text>{questions[currentQuestion].answer}</Text>
