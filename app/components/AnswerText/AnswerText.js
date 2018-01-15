@@ -3,15 +3,17 @@ import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PrimaryButton from '../Buttons/PrimaryButton';
+import SecondaryButton from '../Buttons/SecondaryButton';
 
-const QuestionText = ({ currentQuestion, questions }) => (
+const AnswerText = ({ currentQuestion, questions }) => (
   <View>
-    <Text>{questions[currentQuestion].question}</Text>
-    <PrimaryButton text="Show answer" />
+    <Text>{questions[currentQuestion].answer}</Text>
+    <PrimaryButton text="Correct" />
+    <SecondaryButton text="Incorrect" />
   </View>
 );
 
-QuestionText.propTypes = {
+AnswerText.propTypes = {
   currentQuestion: PropTypes.number.isRequired,
   questions: PropTypes.array.isRequired,
 };
@@ -20,4 +22,4 @@ const mapStateToProps = state => ({
   currentQuestion: state.quiz.quizStatus.questionNumber,
 });
 
-export default connect(mapStateToProps)(QuestionText);
+export default connect(mapStateToProps)(AnswerText);

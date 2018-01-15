@@ -3,6 +3,8 @@ import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import QuestionText from '../../components/QuestionText';
+import AnswerText from '../../components/AnswerText';
+import QuizScore from '../../components/QuizScore';
 
 const RunQuiz = ({
   currentQuestion,
@@ -23,18 +25,8 @@ const RunQuiz = ({
     <View>
       <Text>Run Quiz container is here</Text>
       {showQuestion && <QuestionText questions={questions} />}
-      {showAnswer && (
-        <View>
-          <Text>{questions[currentQuestion].answer}</Text>
-        </View>
-      )}
-      {showScore && (
-        <View>
-          <Text>
-            Your scored {userQuizScore} points out of {totalQuizQuestions}.
-          </Text>
-        </View>
-      )}
+      {showAnswer && <AnswerText questions={questions} />}
+      {showScore && <QuizScore totalQuizQuestions={totalQuizQuestions} />}
     </View>
   );
 };
