@@ -1,5 +1,5 @@
-export const selectDeckTitleAndQuestions = deckData =>
-  Object.keys(deckData).map(key => ({
-    title: deckData[key].title,
-    questions: deckData[key].questions,
+export const selectDeckTitleAndQuestions = ({ decks }) =>
+  Object.keys(decks).map(key => ({
+    title: decks[key].title,
+    questions: decks[key].questions,
   }));
