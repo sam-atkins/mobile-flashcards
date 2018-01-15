@@ -1,8 +1,10 @@
 const initialState = {
   quizStatus: {
-    toggleAnswer: false,
+    questionNumber: 0,
+    quizScore: 0,
+    toggleAnswer: true,
     toggleQuestion: true,
-    toggleScore: false,
+    toggleScore: true,
   },
 };
 

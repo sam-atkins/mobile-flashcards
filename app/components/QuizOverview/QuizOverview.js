@@ -20,7 +20,12 @@ const QuizOverview = (props) => {
       <ButtonWrapper>
         <PrimaryButton
           text="Start quiz"
-          onPress={() => props.navigation.navigate('Quiz')}
+          onPress={() =>
+            props.navigation.navigate('Quiz', {
+              title,
+              questions,
+            })
+          }
         />
         <SecondaryButton
           text="Add new question"
