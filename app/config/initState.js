@@ -1,7 +1,6 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+// imitating initialState received from an API
 
-const deckData = {
+export const initialDeckData = {
   React: {
     title: 'React',
     questions: [
@@ -26,16 +25,3 @@ const deckData = {
     ],
   },
 };
-
-const DecksView = () => (
-  <View>
-    <Text>Welcome to Mobile Flashcards!</Text>
-    <Text>What do you want to learn today?</Text>
-    {Object.keys(deckData).map((key) => {
-      const { title } = deckData[key];
-      return <Text key={title}>{title}</Text>;
-    })}
-  </View>
-);
-
-export default DecksView;

@@ -5,7 +5,6 @@ plugins:
   - react
   - jsx-a11y
   - import
-  - flowtype
 rules:
   react/jsx-filename-extension: off
   import/extensions: off
