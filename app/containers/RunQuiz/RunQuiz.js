@@ -11,7 +11,6 @@ const RunQuiz = ({
   showAnswer,
   showQuestion,
   showScore,
-  userQuizScore,
   navigation,
 }) => {
   const { questions } = navigation.state.params;
@@ -37,15 +36,13 @@ RunQuiz.propTypes = {
   showAnswer: PropTypes.bool.isRequired,
   showQuestion: PropTypes.bool.isRequired,
   showScore: PropTypes.bool.isRequired,
-  userQuizScore: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = state => ({
-  currentQuestion: state.quiz.quizStatus.questionNumber,
-  showAnswer: state.quiz.quizStatus.toggleAnswer,
-  showQuestion: state.quiz.quizStatus.toggleQuestion,
-  showScore: state.quiz.quizStatus.toggleScore,
-  userQuizScore: state.quiz.quizStatus.quizScore,
+  currentQuestion: state.quiz.quizNumbers.questionNumber,
+  showAnswer: state.quiz.quizDisplay.toggleAnswer,
+  showQuestion: state.quiz.quizDisplay.toggleQuestion,
+  showScore: state.quiz.quizDisplay.toggleScore,
 });
 
 export default connect(mapStateToProps)(RunQuiz);

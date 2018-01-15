@@ -17,7 +17,7 @@ QuizScore.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  userQuizScore: state.quiz.quizStatus.quizScore,
+  userQuizScore: state.quiz.quizDisplay.quizScore,
 });
 
 export default connect(mapStateToProps)(QuizScore);

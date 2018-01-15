@@ -19,7 +19,7 @@ AnswerText.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  currentQuestion: state.quiz.quizStatus.questionNumber,
+  currentQuestion: state.quiz.quizNumbers.questionNumber,
 });
 
 export default connect(mapStateToProps)(AnswerText);
