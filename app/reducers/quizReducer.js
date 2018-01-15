@@ -1,4 +1,8 @@
-import { TOGGLE_ANSWER } from '../actions/quizActions';
+import {
+  CORRECT_ANSWER,
+  INCORRECT_ANSWER,
+  TOGGLE_ANSWER,
+} from '../actions/quizActions';
 
 const initialState = {
   quizDisplay: {
@@ -14,6 +18,32 @@ const initialState = {
 
 const quiz = (state = initialState, action) => {
   switch (action.type) {
+    case CORRECT_ANSWER:
+      return {
+        ...state,
+        quizDisplay: {
+          toggleAnswer: false,
+          toggleQuestion: true,
+          toggleScore: false,
+        },
+        quizNumbers: {
+          questionNumber: state.quizNumbers.questionNumber + 1,
+          quizScore: state.quizNumbers.quizScore + 1,
+        },
+      };
+    case INCORRECT_ANSWER:
+      return {
+        ...state,
+        quizDisplay: {
+          toggleAnswer: false,
+          toggleQuestion: true,
+          toggleScore: false,
+        },
+        quizNumbers: {
+          questionNumber: state.quizNumbers.questionNumber + 1,
+          quizScore: state.quizNumbers.quizScore - 1,
+        },
+      };
     case TOGGLE_ANSWER:
       return {
         ...state,

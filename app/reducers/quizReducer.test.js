@@ -2,7 +2,11 @@
 
 import deepFreeze from 'deep-freeze';
 import quiz from './quizReducer';
-import { TOGGLE_ANSWER } from '../actions/quizActions';
+import {
+  CORRECT_ANSWER,
+  INCORRECT_ANSWER,
+  TOGGLE_ANSWER,
+} from '../actions/quizActions';
 
 const initialState = {
   quizDisplay: {
@@ -11,8 +15,8 @@ const initialState = {
     toggleScore: false,
   },
   quizNumbers: {
-    questionNumber: 0,
-    quizScore: 0,
+    questionNumber: 2,
+    quizScore: 2,
   },
 };
 
@@ -26,15 +30,15 @@ describe('quiz reducer', () => {
         toggleScore: false,
       },
       quizNumbers: {
-        questionNumber: 0,
-        quizScore: 0,
+        questionNumber: 2,
+        quizScore: 2,
       },
     };
     deepFreeze(initialState);
     expect(quiz(initialState, action)).toEqual(expectedState);
   });
 
-  it('should toggle Answer to true', () => {
+  it('should toggleAnswer to true', () => {
     const action = {
       type: TOGGLE_ANSWER,
     };
@@ -45,8 +49,46 @@ describe('quiz reducer', () => {
         toggleScore: false,
       },
       quizNumbers: {
-        questionNumber: 0,
-        quizScore: 0,
+        questionNumber: 2,
+        quizScore: 2,
+      },
+    };
+    deepFreeze(initialState);
+    expect(quiz(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should increment score and question, and toggleQuestion to true', () => {
+    const action = {
+      type: CORRECT_ANSWER,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: true,
+        toggleScore: false,
+      },
+      quizNumbers: {
+        questionNumber: 3,
+        quizScore: 3,
+      },
+    };
+    deepFreeze(initialState);
+    expect(quiz(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should dec score, inc question, and toggleQuestion to true ', () => {
+    const action = {
+      type: INCORRECT_ANSWER,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: true,
+        toggleScore: false,
+      },
+      quizNumbers: {
+        questionNumber: 3,
+        quizScore: 1,
       },
     };
     deepFreeze(initialState);
