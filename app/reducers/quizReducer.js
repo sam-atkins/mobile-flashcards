@@ -1,6 +1,7 @@
 import {
   CORRECT_ANSWER,
   INCORRECT_ANSWER,
+  MANAGE_QUIZ_END,
   TOGGLE_ANSWER,
 } from '../actions/quizActions';
 
@@ -42,6 +43,15 @@ const quiz = (state = initialState, action) => {
         quizNumbers: {
           questionNumber: state.quizNumbers.questionNumber + 1,
           quizScore: state.quizNumbers.quizScore - 1,
+        },
+      };
+    case MANAGE_QUIZ_END:
+      return {
+        ...state,
+        quizDisplay: {
+          toggleAnswer: false,
+          toggleQuestion: false,
+          toggleScore: true,
         },
       };
     case TOGGLE_ANSWER:

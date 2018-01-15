@@ -5,6 +5,7 @@ import quiz from './quizReducer';
 import {
   CORRECT_ANSWER,
   INCORRECT_ANSWER,
+  MANAGE_QUIZ_END,
   TOGGLE_ANSWER,
 } from '../actions/quizActions';
 
@@ -27,25 +28,6 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: false,
         toggleQuestion: true,
-        toggleScore: false,
-      },
-      quizNumbers: {
-        questionNumber: 2,
-        quizScore: 2,
-      },
-    };
-    deepFreeze(initialState);
-    expect(quiz(initialState, action)).toEqual(expectedState);
-  });
-
-  it('should toggleAnswer to true', () => {
-    const action = {
-      type: TOGGLE_ANSWER,
-    };
-    const expectedState = {
-      quizDisplay: {
-        toggleAnswer: true,
-        toggleQuestion: false,
         toggleScore: false,
       },
       quizNumbers: {
@@ -89,6 +71,44 @@ describe('quiz reducer', () => {
       quizNumbers: {
         questionNumber: 3,
         quizScore: 1,
+      },
+    };
+    deepFreeze(initialState);
+    expect(quiz(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should toggleScore to true', () => {
+    const action = {
+      type: MANAGE_QUIZ_END,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: false,
+        toggleScore: true,
+      },
+      quizNumbers: {
+        questionNumber: 2,
+        quizScore: 2,
+      },
+    };
+    deepFreeze(initialState);
+    expect(quiz(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should toggleAnswer to true', () => {
+    const action = {
+      type: TOGGLE_ANSWER,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: true,
+        toggleQuestion: false,
+        toggleScore: false,
+      },
+      quizNumbers: {
+        questionNumber: 2,
+        quizScore: 2,
       },
     };
     deepFreeze(initialState);
