@@ -1,11 +1,6 @@
-// import {
+import { initialDeckData } from '../config/initState';
 
-// } from '../actions/';
-
-const initialState = {};
-
-const decks = (state = initialState, action) => {
-
+const decks = (state = initialDeckData, action) => {
   switch (action.type) {
     default:
       return state;
