@@ -6,6 +6,7 @@ import HomeView from '../containers/HomeView';
 import CreateQuiz from '../components/CreateQuiz';
 import Settings from '../components/Settings';
 import QuizOverview from '../components/QuizOverview';
+import RunQuiz from '../containers/RunQuiz';
 import {
   NAV_HEADER_BACKGROUND,
   NAV_HEADER_TINT,
@@ -80,6 +81,12 @@ export const MainNavigator = StackNavigator({
     screen: QuizOverview,
     navigationOptions: {
       title: 'Deck',
+    },
+  },
+  Quiz: {
+    screen: RunQuiz,
+    navigationOptions: {
+      title: 'Quiz',
     },
   },
   CreateQuiz: {
