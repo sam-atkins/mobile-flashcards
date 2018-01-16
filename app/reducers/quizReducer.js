@@ -1,7 +1,9 @@
 import {
   CORRECT_ANSWER,
   INCORRECT_ANSWER,
-  MANAGE_QUIZ_END,
+  MANAGE_QUIZ_END_INC_SCORE,
+  MANAGE_QUIZ_END_DEC_SCORE,
+  RESET_QUIZ,
   TOGGLE_ANSWER,
 } from '../actions/quizActions';
 
@@ -45,13 +47,43 @@ const quiz = (state = initialState, action) => {
           quizScore: state.quizNumbers.quizScore - 1,
         },
       };
-    case MANAGE_QUIZ_END:
+    case MANAGE_QUIZ_END_INC_SCORE:
       return {
         ...state,
         quizDisplay: {
           toggleAnswer: false,
           toggleQuestion: false,
           toggleScore: true,
+        },
+        quizNumbers: {
+          questionNumber: state.quizNumbers.questionNumber + 1,
+          quizScore: state.quizNumbers.quizScore + 1,
+        },
+      };
+    case MANAGE_QUIZ_END_DEC_SCORE:
+      return {
+        ...state,
+        quizDisplay: {
+          toggleAnswer: false,
+          toggleQuestion: false,
+          toggleScore: true,
+        },
+        quizNumbers: {
+          questionNumber: state.quizNumbers.questionNumber + 1,
+          quizScore: state.quizNumbers.quizScore - 1,
+        },
+      };
+    case RESET_QUIZ:
+      return {
+        ...state,
+        quizDisplay: {
+          toggleAnswer: false,
+          toggleQuestion: true,
+          toggleScore: false,
+        },
+        quizNumbers: {
+          questionNumber: 0,
+          quizScore: 0,
         },
       };
     case TOGGLE_ANSWER:

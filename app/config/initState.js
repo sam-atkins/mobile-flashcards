@@ -3,6 +3,7 @@
 export const initialDeckData = {
   React: {
     title: 'React',
+    quizLength: 2,
     questions: [
       {
         question: 'What is React?',
@@ -16,6 +17,7 @@ export const initialDeckData = {
   },
   JavaScript: {
     title: 'JavaScript',
+    quizLength: 1,
     questions: [
       {
         question: 'What is a closure?',

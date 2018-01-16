@@ -5,22 +5,17 @@ import PropTypes from 'prop-types';
 import PrimaryButton from '../Buttons/PrimaryButton';
 import { toggleAnswer } from '../../actions/quizActions';
 
-const QuestionText = ({ currentQuestion, questions, showAnswer }) => (
+const QuestionText = ({ question, showAnswer }) => (
   <View>
-    <Text>{questions[currentQuestion].question}</Text>
+    <Text>{question}</Text>
     <PrimaryButton text="Show answer" onPress={() => showAnswer()} />
   </View>
 );
 
 QuestionText.propTypes = {
-  currentQuestion: PropTypes.number.isRequired,
-  questions: PropTypes.array.isRequired,
+  question: PropTypes.string.isRequired,
   showAnswer: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = state => ({
-  currentQuestion: state.quiz.quizNumbers.questionNumber,
-});
 
 const mapDispatchToProps = dispatch => ({
   showAnswer: () => {
@@ -28,4 +23,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionText);
+export default connect(null, mapDispatchToProps)(QuestionText);

@@ -7,32 +7,65 @@ import SecondaryButton from '../Buttons/SecondaryButton';
 import {
   handleCorrectAnswer,
   handleIncorrectAnswer,
+  manageQuizEndIncrementScore,
+  manageQuizEndDecrementScore,
 } from '../../actions/quizActions';
+// import { selectQuizLength } from '../../selectors/quizSelectors';
 
 const AnswerText = ({
+  answer,
   currentQuestion,
-  questions,
   userCorrectAnswer,
+  totalQuizQuestions,
   userIncorrectAnswer,
-}) => (
-  <View>
-    <Text>Answer:</Text>
-    <Text>{questions[currentQuestion].answer}</Text>
-    <PrimaryButton text="Correct" onPress={() => userCorrectAnswer()} />
-    <SecondaryButton text="Incorrect" onPress={() => userIncorrectAnswer()} />
-  </View>
-);
+  correctAndRenderQuizScore,
+  incorrectAndRenderQuizScore,
+}) => {
+  const buttonOnPressVariations = () => {
+    if (currentQuestion === totalQuizQuestions) {
+      return (
+        <View>
+          <PrimaryButton
+            text="Correct"
+            onPress={() => correctAndRenderQuizScore()}
+          />
+          <SecondaryButton
+            text="Incorrect"
+            onPress={() => incorrectAndRenderQuizScore()}
+          />
+        </View>
+      );
+    }
 
-AnswerText.propTypes = {
-  currentQuestion: PropTypes.number.isRequired,
-  questions: PropTypes.array.isRequired,
-  userCorrectAnswer: PropTypes.func.isRequired,
-  userIncorrectAnswer: PropTypes.func.isRequired,
+    return (
+      <View>
+        <PrimaryButton text="Correct" onPress={() => userCorrectAnswer()} />
+        <SecondaryButton
+          text="Incorrect"
+          onPress={() => userIncorrectAnswer()}
+        />
+      </View>
+    );
+  };
+
+  return (
+    <View>
+      <Text>Answer:</Text>
+      <Text>{answer}</Text>
+      {buttonOnPressVariations()}
+    </View>
+  );
 };
 
-const mapStateToProps = state => ({
-  currentQuestion: state.quiz.quizNumbers.questionNumber,
-});
+AnswerText.propTypes = {
+  answer: PropTypes.string.isRequired,
+  currentQuestion: PropTypes.number.isRequired,
+  totalQuizQuestions: PropTypes.number.isRequired,
+  userCorrectAnswer: PropTypes.func.isRequired,
+  userIncorrectAnswer: PropTypes.func.isRequired,
+  correctAndRenderQuizScore: PropTypes.func.isRequired,
+  incorrectAndRenderQuizScore: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = dispatch => ({
   userCorrectAnswer: () => {
@@ -41,6 +74,12 @@ const mapDispatchToProps = dispatch => ({
   userIncorrectAnswer: () => {
     dispatch(handleIncorrectAnswer());
   },
+  correctAndRenderQuizScore: () => {
+    dispatch(manageQuizEndIncrementScore());
+  },
+  incorrectAndRenderQuizScore: () => {
+    dispatch(manageQuizEndDecrementScore());
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnswerText);
+export default connect(null, mapDispatchToProps)(AnswerText);

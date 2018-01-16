@@ -5,7 +5,8 @@ import quiz from './quizReducer';
 import {
   CORRECT_ANSWER,
   INCORRECT_ANSWER,
-  MANAGE_QUIZ_END,
+  MANAGE_QUIZ_END_INC_SCORE,
+  MANAGE_QUIZ_END_DEC_SCORE,
   TOGGLE_ANSWER,
 } from '../actions/quizActions';
 
@@ -77,9 +78,9 @@ describe('quiz reducer', () => {
     expect(quiz(initialState, action)).toEqual(expectedState);
   });
 
-  it('should toggleScore to true', () => {
+  it('should toggleScore to true and increment quizNumbers', () => {
     const action = {
-      type: MANAGE_QUIZ_END,
+      type: MANAGE_QUIZ_END_INC_SCORE,
     };
     const expectedState = {
       quizDisplay: {
@@ -88,8 +89,27 @@ describe('quiz reducer', () => {
         toggleScore: true,
       },
       quizNumbers: {
-        questionNumber: 2,
-        quizScore: 2,
+        questionNumber: 3,
+        quizScore: 3,
+      },
+    };
+    deepFreeze(initialState);
+    expect(quiz(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should toggleScore to true and increment quizNumbers', () => {
+    const action = {
+      type: MANAGE_QUIZ_END_DEC_SCORE,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: false,
+        toggleScore: true,
+      },
+      quizNumbers: {
+        questionNumber: 3,
+        quizScore: 1,
       },
     };
     deepFreeze(initialState);
