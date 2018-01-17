@@ -5,10 +5,16 @@ import PropTypes from 'prop-types';
 import PrimaryButton from '../Buttons/PrimaryButton';
 import { resetQuiz } from '../../actions/quizActions';
 
-const QuizScore = ({ totalQuizQuestions, userQuizScore, userResetQuiz }) => (
+const QuizScore = ({
+  totalQuizQuestions,
+  userCorrectScore,
+  userIncorrectScore,
+  userResetQuiz,
+}) => (
   <View>
     <Text>
-      Your scored {userQuizScore} points out of {totalQuizQuestions}.
+      You got {userCorrectScore} right and {userIncorrectScore} wrong out of{' '}
+      {totalQuizQuestions}.
     </Text>
     <PrimaryButton
       text="Reset Quiz?"
@@ -21,7 +27,8 @@ const QuizScore = ({ totalQuizQuestions, userQuizScore, userResetQuiz }) => (
 
 QuizScore.propTypes = {
   totalQuizQuestions: PropTypes.number.isRequired,
-  userQuizScore: PropTypes.number.isRequired,
+  userCorrectScore: PropTypes.number.isRequired,
+  userIncorrectScore: PropTypes.number.isRequired,
   userResetQuiz: PropTypes.func.isRequired,
 };
 

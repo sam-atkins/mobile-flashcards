@@ -7,6 +7,7 @@ import {
   INCORRECT_ANSWER,
   MANAGE_QUIZ_END_INC_SCORE,
   MANAGE_QUIZ_END_DEC_SCORE,
+  RESET_QUIZ,
   TOGGLE_ANSWER,
 } from '../actions/quizActions';
 
@@ -17,7 +18,8 @@ const initialState = {
   },
   quizNumbers: {
     questionNumber: 2,
-    quizScore: 2,
+    quizScoreCorrect: 2,
+    quizScoreIncorrect: 2,
   },
 };
 
@@ -31,7 +33,8 @@ describe('quiz reducer', () => {
       },
       quizNumbers: {
         questionNumber: 2,
-        quizScore: 2,
+        quizScoreCorrect: 2,
+        quizScoreIncorrect: 2,
       },
     };
     deepFreeze(initialState);
@@ -49,14 +52,15 @@ describe('quiz reducer', () => {
       },
       quizNumbers: {
         questionNumber: 3,
-        quizScore: 3,
+        quizScoreCorrect: 3,
+        quizScoreIncorrect: 2,
       },
     };
     deepFreeze(initialState);
     expect(quiz(initialState, action)).toEqual(expectedState);
   });
 
-  it('should dec score, inc question, and toggleQuestion to true ', () => {
+  it('should dec score & question, and toggleQuestion to true ', () => {
     const action = {
       type: INCORRECT_ANSWER,
     };
@@ -67,7 +71,8 @@ describe('quiz reducer', () => {
       },
       quizNumbers: {
         questionNumber: 3,
-        quizScore: 1,
+        quizScoreCorrect: 2,
+        quizScoreIncorrect: 1,
       },
     };
     deepFreeze(initialState);
@@ -82,11 +87,11 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: false,
         toggleQuestion: false,
-        toggleScore: true,
       },
       quizNumbers: {
         questionNumber: 3,
-        quizScore: 3,
+        quizScoreCorrect: 3,
+        quizScoreIncorrect: 2,
       },
     };
     deepFreeze(initialState);
@@ -101,11 +106,30 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: false,
         toggleQuestion: false,
-        toggleScore: true,
       },
       quizNumbers: {
         questionNumber: 3,
-        quizScore: 1,
+        quizScoreCorrect: 2,
+        quizScoreIncorrect: 1,
+      },
+    };
+    deepFreeze(initialState);
+    expect(quiz(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should reset the quiz', () => {
+    const action = {
+      type: RESET_QUIZ,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: true,
+      },
+      quizNumbers: {
+        questionNumber: 0,
+        quizScoreCorrect: 0,
+        quizScoreIncorrect: 0,
       },
     };
     deepFreeze(initialState);
@@ -123,7 +147,8 @@ describe('quiz reducer', () => {
       },
       quizNumbers: {
         questionNumber: 2,
-        quizScore: 2,
+        quizScoreCorrect: 2,
+        quizScoreIncorrect: 2,
       },
     };
     deepFreeze(initialState);

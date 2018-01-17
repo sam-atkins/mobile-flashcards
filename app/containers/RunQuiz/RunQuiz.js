@@ -17,6 +17,8 @@ const RunQuiz = ({
   showAnswer,
   showQuestion,
   totalQuizQuestions,
+  userCorrectScore,
+  userIncorrectScore,
   navigation,
 }) => {
   if (questionsAndAnswers[currentQuestion] !== undefined) {
@@ -37,7 +39,13 @@ const RunQuiz = ({
       </View>
     );
   }
-  return <QuizScore totalQuizQuestions={totalQuizQuestions} />;
+  return (
+    <QuizScore
+      totalQuizQuestions={totalQuizQuestions}
+      userCorrectScore={userCorrectScore}
+      userIncorrectScore={userIncorrectScore}
+    />
+  );
 };
 
 RunQuiz.propTypes = {
@@ -47,14 +55,14 @@ RunQuiz.propTypes = {
   showAnswer: PropTypes.bool.isRequired,
   showQuestion: PropTypes.bool.isRequired,
   totalQuizQuestions: PropTypes.number.isRequired,
+  userCorrectScore: PropTypes.number.isRequired,
+  userIncorrectScore: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => ({
   currentQuestion: state.quiz.quizNumbers.questionNumber,
   showAnswer: state.quiz.quizDisplay.toggleAnswer,
   showQuestion: state.quiz.quizDisplay.toggleQuestion,
-  // TODO add button to play again, onPress to toggle showScore()
-  showScore: state.quiz.quizDisplay.toggleScore,
   questionsAndAnswers: selectQuestionsAndAnswers(
     state,
     ownProps.navigation.state.params.title
@@ -63,6 +71,8 @@ const mapStateToProps = (state, ownProps) => ({
     state,
     ownProps.navigation.state.params.title
   ),
+  userCorrectScore: state.quiz.quizNumbers.quizScoreCorrect,
+  userIncorrectScore: state.quiz.quizNumbers.quizScoreIncorrect,
 });
 
 const mapDispatchToProps = dispatch => ({
