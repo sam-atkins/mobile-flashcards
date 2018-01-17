@@ -11,7 +11,6 @@ const initialState = {
   quizDisplay: {
     toggleAnswer: false,
     toggleQuestion: true,
-    toggleScore: false,
   },
   quizNumbers: {
     questionNumber: 0,
@@ -27,7 +26,6 @@ const quiz = (state = initialState, action) => {
         quizDisplay: {
           toggleAnswer: false,
           toggleQuestion: true,
-          toggleScore: false,
         },
         quizNumbers: {
           questionNumber: state.quizNumbers.questionNumber + 1,
@@ -40,7 +38,6 @@ const quiz = (state = initialState, action) => {
         quizDisplay: {
           toggleAnswer: false,
           toggleQuestion: true,
-          toggleScore: false,
         },
         quizNumbers: {
           questionNumber: state.quizNumbers.questionNumber + 1,
@@ -79,7 +76,6 @@ const quiz = (state = initialState, action) => {
         quizDisplay: {
           toggleAnswer: false,
           toggleQuestion: true,
-          toggleScore: false,
         },
         quizNumbers: {
           questionNumber: 0,
@@ -92,7 +88,6 @@ const quiz = (state = initialState, action) => {
         quizDisplay: {
           toggleAnswer: true,
           toggleQuestion: false,
-          toggleScore: false,
         },
       };
     default:

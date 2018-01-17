@@ -14,7 +14,6 @@ const initialState = {
   quizDisplay: {
     toggleAnswer: false,
     toggleQuestion: true,
-    toggleScore: false,
   },
   quizNumbers: {
     questionNumber: 2,
@@ -29,7 +28,6 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: false,
         toggleQuestion: true,
-        toggleScore: false,
       },
       quizNumbers: {
         questionNumber: 2,
@@ -48,7 +46,6 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: false,
         toggleQuestion: true,
-        toggleScore: false,
       },
       quizNumbers: {
         questionNumber: 3,
@@ -67,7 +64,6 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: false,
         toggleQuestion: true,
-        toggleScore: false,
       },
       quizNumbers: {
         questionNumber: 3,
@@ -124,7 +120,6 @@ describe('quiz reducer', () => {
       quizDisplay: {
         toggleAnswer: true,
         toggleQuestion: false,
-        toggleScore: false,
       },
       quizNumbers: {
         questionNumber: 2,
