@@ -18,8 +18,19 @@ const QuizOverview = (props) => {
       <Text>{title}</Text>
       <Text>{questions.length} cards</Text>
       <ButtonWrapper>
-        <PrimaryButton text="Start quiz" />
-        <SecondaryButton text="Add new question" />
+        <PrimaryButton
+          text="Start quiz"
+          onPress={() =>
+            props.navigation.navigate('Quiz', {
+              title,
+              questions,
+            })
+          }
+        />
+        <SecondaryButton
+          text="Add new question"
+          onPress={() => console.log('add new question pressed')}
+        />
       </ButtonWrapper>
     </StyledView>
   );
