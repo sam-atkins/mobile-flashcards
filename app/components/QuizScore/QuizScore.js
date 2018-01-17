@@ -13,8 +13,8 @@ const QuizScore = ({
 }) => (
   <View>
     <Text>
-      You got {userCorrectScore} right and {userIncorrectScore} wrong out of{' '}
-      {totalQuizQuestions}.
+      You got {userCorrectScore} right and {userIncorrectScore} wrong from a
+      total of {totalQuizQuestions} questions.
     </Text>
     <PrimaryButton
       text="Reset Quiz?"
