@@ -79,6 +79,36 @@ describe('quiz reducer', () => {
     expect(quiz(initialState, action)).toEqual(expectedState);
   });
 
+  it('should keep incorrect score at 0', () => {
+    const initialShape = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: true,
+      },
+      quizNumbers: {
+        questionNumber: 2,
+        quizScoreCorrect: 2,
+        quizScoreIncorrect: 0,
+      },
+    };
+    const action = {
+      type: INCORRECT_ANSWER,
+    };
+    const expectedState = {
+      quizDisplay: {
+        toggleAnswer: false,
+        toggleQuestion: true,
+      },
+      quizNumbers: {
+        questionNumber: 3,
+        quizScoreCorrect: 2,
+        quizScoreIncorrect: 0,
+      },
+    };
+    deepFreeze(initialShape);
+    expect(quiz(initialShape, action)).toEqual(expectedState);
+  });
+
   it('should toggleScore to true and increment quizNumbers', () => {
     const action = {
       type: MANAGE_QUIZ_END_INC_SCORE,

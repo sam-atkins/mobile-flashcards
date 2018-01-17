@@ -44,7 +44,10 @@ const quiz = (state = initialState, action) => {
         quizNumbers: {
           questionNumber: state.quizNumbers.questionNumber + 1,
           quizScoreCorrect: state.quizNumbers.quizScoreCorrect,
-          quizScoreIncorrect: state.quizNumbers.quizScoreIncorrect - 1,
+          quizScoreIncorrect:
+            state.quizNumbers.quizScoreIncorrect > 0
+              ? state.quizNumbers.quizScoreIncorrect - 1
+              : 0,
         },
       };
     case MANAGE_QUIZ_END_INC_SCORE:
@@ -70,7 +73,10 @@ const quiz = (state = initialState, action) => {
         quizNumbers: {
           questionNumber: state.quizNumbers.questionNumber + 1,
           quizScoreCorrect: state.quizNumbers.quizScoreCorrect,
-          quizScoreIncorrect: state.quizNumbers.quizScoreIncorrect - 1,
+          quizScoreIncorrect:
+            state.quizNumbers.quizScoreIncorrect > 0
+              ? state.quizNumbers.quizScoreIncorrect - 1
+              : 0,
         },
       };
     case RESET_QUIZ:
