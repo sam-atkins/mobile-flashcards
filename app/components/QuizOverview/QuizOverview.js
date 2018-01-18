@@ -29,7 +29,7 @@ const QuizOverview = (props) => {
         />
         <SecondaryButton
           text="Add new question"
-          onPress={() => props.navigation.navigate('NewCardForm')}
+          onPress={() => props.navigation.navigate('NewCardForm', { title })}
         />
       </ButtonWrapper>
     </StyledView>
