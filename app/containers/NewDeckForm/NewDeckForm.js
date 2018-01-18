@@ -22,6 +22,9 @@ class NewDeckForm extends Component {
         <TextInput
           style={{ height: 40 }}
           placeholder="Deck title"
+          maxLength={50}
+          blurOnSubmit
+          keyboardType="default"
           onChangeText={title => this.setState({ title })}
         />
         <PrimaryButton onPress={() => this.handleOnPress(this.state)} />
