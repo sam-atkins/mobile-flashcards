@@ -9,6 +9,12 @@ class NewDeckForm extends Component {
   state = {
     title: '',
   };
+
+  handleOnPress = (payload) => {
+    this.props.submitDeckTitle(payload);
+    this.props.navigation.navigate('Home');
+  };
+
   render() {
     return (
       <View>
@@ -18,7 +24,7 @@ class NewDeckForm extends Component {
           placeholder="Deck title"
           onChangeText={title => this.setState({ title })}
         />
-        <PrimaryButton onPress={() => this.props.submitDeckTitle(this.state)} />
+        <PrimaryButton onPress={() => this.handleOnPress(this.state)} />
       </View>
     );
   }
@@ -26,6 +32,7 @@ class NewDeckForm extends Component {
 
 NewDeckForm.propTypes = {
   submitDeckTitle: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
