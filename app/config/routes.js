@@ -3,10 +3,10 @@ import { Platform } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 import HomeView from '../containers/HomeView';
-import CreateQuiz from '../components/CreateQuiz';
 import Settings from '../components/Settings';
 import QuizOverview from '../components/QuizOverview';
 import RunQuiz from '../containers/RunQuiz';
+import NewDeckForm from '../containers/NewDeckForm';
 import {
   NAV_HEADER_BACKGROUND,
   NAV_HEADER_TINT,
@@ -27,8 +27,8 @@ export const Tabs = TabNavigator(
         ),
       },
     },
-    CreateQuiz: {
-      screen: CreateQuiz,
+    NewDeckForm: {
+      screen: NewDeckForm,
       navigationOptions: {
         tabBarLabel: 'Create quiz',
         tabBarIcon: ({ tintColor }) => (
@@ -89,8 +89,8 @@ export const MainNavigator = StackNavigator({
       title: 'Quiz',
     },
   },
-  CreateQuiz: {
-    screen: CreateQuiz,
+  NewDeckForm: {
+    screen: NewDeckForm,
     navigationOptions: {
       headerTintColor: NAV_HEADER_TINT,
       headerStyle: {
