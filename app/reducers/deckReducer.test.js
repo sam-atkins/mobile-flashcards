@@ -68,7 +68,7 @@ describe('decks reducer', () => {
 
   it('should add a new deck', () => {
     const payload = {
-      deckTitle: 'Udacity',
+      title: 'Udacity',
     };
     const action = {
       type: ADD_NEW_DECK,

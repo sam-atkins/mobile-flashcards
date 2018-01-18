@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { TextInput, Text, View } from 'react-native';
-// import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addNewDeck } from '../../actions/deckActions';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 
 class NewDeckForm extends Component {
   state = {
-    deckTitle: '',
+    title: '',
   };
   render() {
     return (
@@ -15,14 +16,22 @@ class NewDeckForm extends Component {
         <TextInput
           style={{ height: 40 }}
           placeholder="Deck title"
-          onChangeText={deckTitle => this.setState({ deckTitle })}
+          onChangeText={title => this.setState({ title })}
         />
-        {console.log('state:', this.state.deckTitle)}
-        <PrimaryButton onPress={() => console.log('new deck pressed submit')} />
+        <PrimaryButton onPress={() => this.props.submitDeckTitle(this.state)} />
       </View>
     );
   }
 }
 
-export default NewDeckForm;
-// export default connect(, )(NewDeckForm);
+NewDeckForm.propTypes = {
+  submitDeckTitle: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  submitDeckTitle: (payload) => {
+    dispatch(addNewDeck(payload));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(NewDeckForm);

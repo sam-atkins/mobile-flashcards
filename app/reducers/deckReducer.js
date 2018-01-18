@@ -6,8 +6,8 @@ const decks = (state = initialDeckData, action) => {
     case ADD_NEW_DECK:
       return {
         ...state,
-        [action.payload.deckTitle]: {
-          title: action.payload.deckTitle,
+        [action.payload.title]: {
+          ...action.payload,
           quizLength: 0,
           questions: [],
         },
