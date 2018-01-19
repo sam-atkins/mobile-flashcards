@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { DatePickerIOS, Text, View } from 'react-native';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
+import {
+  clearLocalNotification,
+  setLocalNotification,
+} from '../../utils/helpers';
 
 class Notifications extends Component {
   constructor(props) {
@@ -13,6 +17,7 @@ class Notifications extends Component {
   setTime(newTime) {
     this.setState({ chosenTime: newTime });
   }
+
   render() {
     return (
       <View>
@@ -25,11 +30,14 @@ class Notifications extends Component {
           onDateChange={this.setTime}
           mode="time"
         />
-        <PrimaryButton />
+        <PrimaryButton
+          onPress={() =>
+            clearLocalNotification().then(setLocalNotification(this.state.chosenTime))
+          }
+        />
       </View>
     );
   }
 }
 
 export default Notifications;
-// export default connect(, )(Notifications);
