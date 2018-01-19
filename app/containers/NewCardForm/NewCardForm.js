@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-// import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addNewCard } from '../../actions/deckActions';
 import TextInputField from '../../components/TextInputField';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 
@@ -11,13 +12,15 @@ class NewCardForm extends Component {
     answer: '',
   };
 
-  handleOnPress = (userEntry) => {
-    // const { title, questions } = this.props.navigation.state.params;
-    console.log('====================================');
-    console.log('new q&a onPress -> userEntry:', userEntry);
-    console.log('props -> title', this.props.navigation.state.params.title);
-    console.log('====================================');
-    // this.props.navigation.navigate('Home');
+  handleOnPress = () => {
+    const { title } = this.props.navigation.state.params;
+    const payload = {
+      title,
+      question: this.state.question,
+      answer: this.state.answer,
+    };
+    this.props.submitCard(payload);
+    this.props.navigation.navigate('Home');
   };
 
   render() {
@@ -35,11 +38,21 @@ class NewCardForm extends Component {
           placeholder="Answer"
           onChangeText={answer => this.setState({ answer })}
         />
-        <PrimaryButton onPress={() => this.handleOnPress(this.state)} />
+        <PrimaryButton onPress={() => this.handleOnPress()} />
       </View>
     );
   }
 }
 
-export default NewCardForm;
-// export default connect(null, mapDispatchToProps)(NewCardForm);
+NewCardForm.propTypes = {
+  submitCard: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  submitCard: (payload) => {
+    dispatch(addNewCard(payload));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(NewCardForm);
