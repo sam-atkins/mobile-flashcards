@@ -17,8 +17,8 @@ class Notifications extends Component {
     return (
       <View>
         <Text>
-          Get a daily reminder on those days when you haven't learned with the
-          app yet
+          Get a daily reminder on those days when you haven&#39;t learned with
+          the app yet
         </Text>
         <DatePickerIOS
           date={this.state.chosenTime}
