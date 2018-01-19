@@ -8,6 +8,7 @@ import QuizOverview from '../components/QuizOverview';
 import RunQuiz from '../containers/RunQuiz';
 import NewDeckForm from '../containers/NewDeckForm';
 import NewCardForm from '../containers/NewCardForm';
+import Notifications from '../containers/Notifications';
 import {
   NAV_HEADER_BACKGROUND,
   NAV_HEADER_TINT,
@@ -106,6 +107,12 @@ export const MainNavigator = StackNavigator({
       headerStyle: {
         backgroundColor: NAV_HEADER_BACKGROUND,
       },
+    },
+  },
+  Notifications: {
+    screen: Notifications,
+    navigationOptions: {
+      title: 'Notifications',
     },
   },
 });
