@@ -12,11 +12,12 @@ describe('QuestionText', () => {
       .create(
         <Provider store={storeConfig}>
           <QuestionText
+            question="question"
             text="Show answer"
-            onPress={() => { }}
+            onPress={() => {}}
           />
         </Provider>)
-        .toJSON();
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

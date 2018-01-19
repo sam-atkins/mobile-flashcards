@@ -6,7 +6,9 @@ exports[`QuestionText renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
-  />
+  >
+    question
+  </Text>
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
