@@ -7,6 +7,7 @@ import Settings from '../components/Settings';
 import QuizOverview from '../components/QuizOverview';
 import RunQuiz from '../containers/RunQuiz';
 import NewDeckForm from '../containers/NewDeckForm';
+import NewCardForm from '../containers/NewCardForm';
 import {
   NAV_HEADER_BACKGROUND,
   NAV_HEADER_TINT,
@@ -91,6 +92,15 @@ export const MainNavigator = StackNavigator({
   },
   NewDeckForm: {
     screen: NewDeckForm,
+    navigationOptions: {
+      headerTintColor: NAV_HEADER_TINT,
+      headerStyle: {
+        backgroundColor: NAV_HEADER_BACKGROUND,
+      },
+    },
+  },
+  NewCardForm: {
+    screen: NewCardForm,
     navigationOptions: {
       headerTintColor: NAV_HEADER_TINT,
       headerStyle: {

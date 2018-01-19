@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { TextInput, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addNewDeck } from '../../actions/deckActions';
+import TextInputField from '../../components/TextInputField';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 
 class NewDeckForm extends Component {
@@ -18,13 +19,10 @@ class NewDeckForm extends Component {
   render() {
     return (
       <View>
-        <Text>What is the title of your new deck?</Text>
-        <TextInput
-          style={{ height: 40 }}
-          placeholder="Deck title"
+        <TextInputField
+          fieldLabel="What is the title of your new deck?"
           maxLength={50}
-          blurOnSubmit
-          keyboardType="default"
+          placeholder="Deck title"
           onChangeText={title => this.setState({ title })}
         />
         <PrimaryButton onPress={() => this.handleOnPress(this.state)} />
