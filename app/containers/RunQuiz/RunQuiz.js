@@ -9,7 +9,6 @@ import {
   selectQuizLength,
   selectQuestionsAndAnswers,
 } from '../../selectors/quizSelectors';
-import { manageQuizEnd } from '../../actions/quizActions';
 
 const RunQuiz = ({
   currentQuestion,
@@ -78,10 +77,4 @@ const mapStateToProps = (state, ownProps) => ({
   userIncorrectScore: state.quiz.quizNumbers.quizScoreIncorrect,
 });
 
-const mapDispatchToProps = dispatch => ({
-  renderQuizScore: () => {
-    dispatch(manageQuizEnd());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(RunQuiz);
+export default connect(mapStateToProps)(RunQuiz);

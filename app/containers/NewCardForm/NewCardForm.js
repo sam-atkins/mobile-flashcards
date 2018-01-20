@@ -19,7 +19,7 @@ class NewCardForm extends Component {
       question: this.state.question,
       answer: this.state.answer,
     };
-    this.props.submitCard(payload);
+    this.props.addNewCard(payload);
     this.props.navigation.navigate('QuizOverview', { title });
   };
 
@@ -45,14 +45,8 @@ class NewCardForm extends Component {
 }
 
 NewCardForm.propTypes = {
-  submitCard: PropTypes.func.isRequired,
+  addNewCard: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  submitCard: (payload) => {
-    dispatch(addNewCard(payload));
-  },
-});
-
-export default connect(null, mapDispatchToProps)(NewCardForm);
+export default connect(null, { addNewCard })(NewCardForm);

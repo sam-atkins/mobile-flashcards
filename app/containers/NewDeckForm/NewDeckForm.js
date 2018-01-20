@@ -13,7 +13,7 @@ class NewDeckForm extends Component {
 
   handleOnPress = (payload) => {
     const { title } = this.state;
-    this.props.submitDeckTitle(payload);
+    this.props.addNewDeck(payload);
     this.props.navigation.navigate('QuizOverview', { title });
   };
 
@@ -33,14 +33,8 @@ class NewDeckForm extends Component {
 }
 
 NewDeckForm.propTypes = {
-  submitDeckTitle: PropTypes.func.isRequired,
+  addNewDeck: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
 };
 
-const mapDispatchToProps = dispatch => ({
-  submitDeckTitle: (payload) => {
-    dispatch(addNewDeck(payload));
-  },
-});
-
-export default connect(null, mapDispatchToProps)(NewDeckForm);
+export default connect(null, { addNewDeck })(NewDeckForm);
