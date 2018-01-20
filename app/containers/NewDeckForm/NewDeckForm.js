@@ -12,8 +12,9 @@ class NewDeckForm extends Component {
   };
 
   handleOnPress = (payload) => {
+    const { title } = this.state;
     this.props.submitDeckTitle(payload);
-    this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('QuizOverview', { title });
   };
 
   render() {
