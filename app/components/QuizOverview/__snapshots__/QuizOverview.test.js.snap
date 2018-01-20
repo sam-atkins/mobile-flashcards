@@ -17,13 +17,37 @@ exports[`QuizOverview renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 20,
+          "paddingHorizontal": 15,
+          "paddingVertical": 15,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
   >
+    Quiz: 
     React
   </Text>
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+          "fontStyle": "italic",
+          "paddingHorizontal": 15,
+          "paddingVertical": 15,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
   >
      cards
   </Text>
