@@ -1,9 +1,17 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
+import styled from 'styled-components/native';
 import PropTypes from 'prop-types';
-import PrimaryButton from '../Buttons/PrimaryButton';
+import SecondaryButton from '../Buttons/SecondaryButton';
 import { resetQuiz } from '../../actions/quizActions';
+
+const StyledQuizScoreText = styled.Text`
+  font-size: 20;
+  padding-vertical: 15;
+  padding-horizontal: 15;
+  text-align: center;
+`;
 
 const QuizScore = ({
   totalQuizQuestions,
@@ -12,11 +20,11 @@ const QuizScore = ({
   userResetQuiz,
 }) => (
   <View>
-    <Text>
+    <StyledQuizScoreText>
       You got {userCorrectScore} right and {userIncorrectScore} wrong from a
       total of {totalQuizQuestions} questions.
-    </Text>
-    <PrimaryButton
+    </StyledQuizScoreText>
+    <SecondaryButton
       text="Reset Quiz?"
       onPress={() => {
         userResetQuiz();
