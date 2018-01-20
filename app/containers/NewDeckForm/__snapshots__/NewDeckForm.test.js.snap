@@ -2,11 +2,29 @@
 
 exports[`NewDeckForm renders correctly 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 15,
+        },
+        undefined,
+      ]
+    }
+  >
     <Text
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+            "paddingTop": 10,
+          },
+          undefined,
+        ]
+      }
     >
       What is the title of your new deck?
     </Text>

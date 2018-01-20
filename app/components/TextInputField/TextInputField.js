@@ -1,6 +1,16 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
+import styled from 'styled-components/native';
 import PropTypes from 'prop-types';
+
+const TextInputWrapper = styled.View`
+  padding-horizontal: 15;
+`;
+
+const FieldLabelText = styled.Text`
+  font-size: 16;
+  padding-top: 10;
+`;
 
 const TextInputField = ({
   fieldLabel,
@@ -8,8 +18,8 @@ const TextInputField = ({
   placeholder,
   onChangeText,
 }) => (
-  <View>
-    <Text>{fieldLabel}</Text>
+  <TextInputWrapper>
+    <FieldLabelText>{fieldLabel}</FieldLabelText>
     <TextInput
       style={{ height: 40 }}
       placeholder={placeholder}
@@ -18,7 +28,7 @@ const TextInputField = ({
       keyboardType="default"
       onChangeText={onChangeText}
     />
-  </View>
+  </TextInputWrapper>
 );
 
 TextInputField.propTypes = {

@@ -1,11 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextInputField renders correctly 1`] = `
-<View>
+<View
+  style={
+    Array [
+      Object {
+        "paddingHorizontal": 15,
+      },
+      undefined,
+    ]
+  }
+>
   <Text
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+          "paddingTop": 10,
+        },
+        undefined,
+      ]
+    }
   >
     label
   </Text>
