@@ -7,7 +7,7 @@ import {
   BUTTON_TEXT,
 } from '../../../config/colours';
 
-export const StyledButtonText = styled.Text`
+const StyledButtonText = styled.Text`
   background-color: ${BUTTON_SECONDARY_BACKGROUND};
   text-align: center;
   font-size: 22;
