@@ -6,6 +6,17 @@ exports[`WelcomeText renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 24,
+          "paddingHorizontal": 15,
+          "paddingTop": 10,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
   >
     Welcome to Mobile Flashcards!
   </Text>
@@ -13,6 +24,17 @@ exports[`WelcomeText renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 18,
+          "paddingHorizontal": 15,
+          "paddingTop": 10,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
   >
     What do you want to learn today?
   </Text>
