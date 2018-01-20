@@ -52,6 +52,8 @@ export const Tabs = TabNavigator(
     navigationOptions: {
       header: null,
     },
+    swipeEnabled: true,
+    animationEnabled: true,
     tabBarOptions: {
       activeTintColor:
         Platform.OS === 'ios'
