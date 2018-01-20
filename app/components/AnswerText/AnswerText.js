@@ -14,8 +14,16 @@ import {
 
 const StyledAnswerText = styled.Text`
   font-size: 20;
-  padding-vertical: 15;
   padding-horizontal: 15;
+  padding-vertical: 25;
+  text-align: center;
+`;
+
+const QuestionsRemainingText = styled.Text`
+  font-size: 12;
+  font-style: italic;
+  padding-horizontal: 15;
+  padding-vertical: 25;
   text-align: center;
 `;
 
@@ -59,6 +67,10 @@ const AnswerText = ({
     <View>
       <StyledAnswerText>{answer}</StyledAnswerText>
       {buttonOnPressVariations()}
+      <QuestionsRemainingText>
+        {totalQuizQuestions - currentQuestion} question(s) remaining including
+        this one
+      </QuestionsRemainingText>
     </View>
   );
 };

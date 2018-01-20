@@ -9,14 +9,15 @@ import storeConfig from '../../store/storeConfig';
 describe('QuestionText', () => {
   it('renders correctly', () => {
     const tree = renderer
-      .create(
-        <Provider store={storeConfig}>
-          <QuestionText
-            question="question"
-            text="Show answer"
-            onPress={() => {}}
-          />
-        </Provider>)
+      .create(<Provider store={storeConfig}>
+        <QuestionText
+          deckTitle="React"
+          currentQuestionNum={1}
+          question="question"
+          quizLength={3}
+          onPress={() => {}}
+        />
+              </Provider>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

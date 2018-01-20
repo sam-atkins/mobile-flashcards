@@ -8,22 +8,45 @@ import { toggleAnswer } from '../../actions/quizActions';
 
 const StyledQuestionText = styled.Text`
   font-size: 20;
-  padding-vertical: 15;
   padding-horizontal: 15;
+  padding-vertical: 25;
   text-align: center;
 `;
 
-const QuestionText = ({ question, showAnswer }) => (
+const QuestionsRemainingText = styled.Text`
+  font-size: 12;
+  font-style: italic;
+  padding-horizontal: 15;
+  padding-vertical: 25;
+  text-align: center;
+`;
+
+const QuestionText = ({
+  currentQuestionNum,
+  question,
+  quizLength,
+  showAnswer,
+}) => (
   <View>
     <StyledQuestionText>{question}</StyledQuestionText>
     <PrimaryButton text="Show answer" onPress={() => showAnswer()} />
+    <QuestionsRemainingText>
+      {quizLength - currentQuestionNum} question(s) remaining including this one
+    </QuestionsRemainingText>
   </View>
 );
 
 QuestionText.propTypes = {
+  currentQuestionNum: PropTypes.number.isRequired,
   question: PropTypes.string.isRequired,
+  quizLength: PropTypes.number.isRequired,
   showAnswer: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = (state, ownProps) => ({
+  quizLength: state.decks[ownProps.deckTitle].quizLength,
+  currentQuestionNum: state.quiz.quizNumbers.questionNumber,
+});
 
 const mapDispatchToProps = dispatch => ({
   showAnswer: () => {
@@ -31,4 +54,4 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(QuestionText);
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionText);

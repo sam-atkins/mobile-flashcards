@@ -11,7 +11,7 @@ exports[`QuestionText renders correctly 1`] = `
         Object {
           "fontSize": 20,
           "paddingHorizontal": 15,
-          "paddingVertical": 15,
+          "paddingVertical": 25,
           "textAlign": "center",
         },
         undefined,
@@ -69,5 +69,25 @@ exports[`QuestionText renders correctly 1`] = `
       Show answer
     </Text>
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 12,
+          "fontStyle": "italic",
+          "paddingHorizontal": 15,
+          "paddingVertical": 25,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    2
+     question(s) remaining including this one
+  </Text>
 </View>
 `;
