@@ -5,28 +5,28 @@
 [![CircleCI](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master.svg?style=svg)](https://circleci.com/gh/cubiio/mobile-flashcards/tree/master)
 
 ## Description
+
 This is the third project for the [React Nanodegree](https://www.udacity.com/course/react-nanodegree--nd019).
 
-It is a mobile application (Android or iOS) that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
+It is a mobile application that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
 
-The app is built with React Native.
+The app is built with React Native and was developed and tested for **iOS only**.
 
 ## Table of Contents
 
-- [Getting started](#getting-started)
-  - [Installation](#installation)
-- [Develop](#develop)
-  - [How to run](#how-to-run)
-  - [Tests](#tests)
-  - [Continuous Integration](#continuous-integration)
-  - [Style Guide](#style-guide)
-- [Release](#release)
-  - [Build](#build)
-  - [Deploy](#deploy)
-  - [Demo](#demo)
-- [Inspiration and Information](#inspiration-and-information)
-- [Expo React Native Documentation](#expo-react-native-documentation)
-  - [Expo Table of Contents](#expo-table-of-contents)
+* [Getting started](#getting-started)
+  * [Installation](#installation)
+* [Develop](#develop)
+  * [How to run](#how-to-run)
+  * [Tests](#tests)
+  * [Continuous Integration](#continuous-integration)
+  * [Style Guide](#style-guide)
+* [Release](#release)
+  * [Publish on Expo](#publish-on-expo)
+  * [Demo](#demo)
+* [Inspiration and Information](#inspiration-and-information)
+* [Expo React Native Documentation](#expo-react-native-documentation)
+  * [Expo Table of Contents](#expo-table-of-contents)
 
 ## Getting started
 
@@ -40,6 +40,7 @@ The React Native app was bootstrapped with [Create React Native App](https://git
 * `create-react-native-app`
 * Editor / IDE
 * Expo app on a mobile device, and/or Xcode (for the iOS simulator)
+* Expo SDK or XDE
 
 To get started with this repository:
 
@@ -79,6 +80,12 @@ A menu appears in the terminal with options. Select the appropriate option e.g. 
 yarn test
 ```
 
+If snapshot tests need to be updated, use this command:
+
+```sh
+yarn test -u
+```
+
 ### Continuous Integration
 
 Circle CI is set-up for this repo. Pushes made to remote will trigger a Circle build. The config is in the `.circle` folder.
@@ -91,24 +98,36 @@ The ESLint config extends from AirBnB, with a few changes. Refer to the `.eslint
 
 ## Release
 
-### Build
+“Publish” is the term Expo use to deploy a project.
 
-[Placeholder]
+### Publish on Expo
 
-### Deploy
+Expo docs on [publishing](https://docs.expo.io/versions/latest/guides/publishing.html).
 
-[Placeholder]
+#### CLI / SDK
+
+Install the `exp` command-line tool, and run the publish command:
+
+```
+$ npm i -g exp
+$ exp publish
+```
+
+#### XDE
+
+Open the project and select publish.
 
 ### Demo
 
-[Placeholder]
+The app is available on [Expo.io](https://expo.io/@cubiio/mobile-flashcards).
 
 ## Inspiration and Information
 
-- [Organizing a React Native Project](https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0)
-- [How to better organize your React applications?](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
+* [Organizing a React Native Project](https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0)
+* [How to better organize your React applications?](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
 
-***
+---
+
 ## Expo React Native Documentation
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
@@ -116,7 +135,6 @@ This project was bootstrapped with [Create React Native App](https://github.com/
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
 
 ### Expo Table of Contents
-
 
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
@@ -231,6 +249,7 @@ REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
 ```
 
 Windows:
+
 ```
 set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
 npm start
