@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SecondaryButton renders correctly 1`] = `
+exports[`InfoButton renders correctly 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -32,11 +32,11 @@ exports[`SecondaryButton renders correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "#FF2D40",
-          "color": "#ffffff",
+          "backgroundColor": "#BDC7CF",
+          "color": "#000000",
           "fontSize": 22,
-          "marginLeft": 40,
-          "marginRight": 40,
+          "marginLeft": 5,
+          "marginRight": 5,
           "marginVertical": 10,
           "paddingBottom": 10,
           "paddingTop": 10,

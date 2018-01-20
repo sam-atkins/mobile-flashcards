@@ -19,7 +19,6 @@ const RunQuiz = ({
   totalQuizQuestions,
   userCorrectScore,
   userIncorrectScore,
-  navigation,
 }) => {
   if (questionsAndAnswers[currentQuestion] !== undefined) {
     return (
@@ -50,7 +49,6 @@ const RunQuiz = ({
 
 RunQuiz.propTypes = {
   currentQuestion: PropTypes.number.isRequired,
-  navigation: PropTypes.object.isRequired,
   questionsAndAnswers: PropTypes.array.isRequired,
   showAnswer: PropTypes.bool.isRequired,
   showQuestion: PropTypes.bool.isRequired,

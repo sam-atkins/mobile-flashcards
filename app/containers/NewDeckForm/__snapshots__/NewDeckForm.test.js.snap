@@ -1,25 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`QuestionText renders correctly 1`] = `
+exports[`NewDeckForm renders correctly 1`] = `
 <View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
     style={
       Array [
         Object {
-          "fontSize": 20,
           "paddingHorizontal": 15,
-          "paddingVertical": 15,
-          "textAlign": "center",
         },
         undefined,
       ]
     }
   >
-    question
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+            "paddingTop": 10,
+          },
+          undefined,
+        ]
+      }
+    >
+      What is the title of your new deck?
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      blurOnSubmit={true}
+      keyboardType="default"
+      maxLength={50}
+      onChangeText={[Function]}
+      placeholder="Deck title"
+      style={
+        Object {
+          "height": 40,
+        }
+      }
+    />
+  </View>
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
@@ -66,7 +88,7 @@ exports[`QuestionText renders correctly 1`] = `
         ]
       }
     >
-      Show answer
+      Submit
     </Text>
   </View>
 </View>

@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeView renders correctly 1`] = `
+<View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 24,
+            "paddingHorizontal": 15,
+            "paddingTop": 10,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      Welcome to Mobile Flashcards!
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 18,
+            "paddingBottom": 10,
+            "paddingHorizontal": 15,
+            "paddingTop": 10,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      What do you want to learn today?
+    </Text>
+  </View>
+  <View>
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "questions": Array [
+              Object {
+                "answer": "A library for managing user interfaces",
+                "question": "What is React?",
+              },
+              Object {
+                "answer": "The componentDidMount lifecycle event",
+                "question": "Where do you make Ajax requests in React?",
+              },
+            ],
+            "title": "React",
+          },
+          Object {
+            "questions": Array [
+              Object {
+                "answer": "The combination of a function and the lexical environment within which that function was declared.",
+                "question": "What is a closure?",
+              },
+            ],
+            "title": "JavaScript",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+                "paddingVertical": 10,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              React
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 16,
+                    "fontStyle": "italic",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              2
+               cards
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+                "paddingVertical": 10,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              JavaScript
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 16,
+                    "fontStyle": "italic",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              1
+               cards
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

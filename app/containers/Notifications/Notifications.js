@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import { DatePickerIOS, Text, View } from 'react-native';
+import styled from 'styled-components/native';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import {
   clearLocalNotification,
   setLocalNotification,
 } from '../../utils/helpers';
+
+const ExplanationText = styled.Text`
+  font-size: 20;
+  text-align: center;
+  padding-top: 10;
+  padding-horizontal: 15;
+`;
 
 class Notifications extends Component {
   constructor(props) {
@@ -21,10 +29,7 @@ class Notifications extends Component {
   render() {
     return (
       <View>
-        <Text>
-          Get a daily reminder on those days when you haven&#39;t learned with
-          the app yet
-        </Text>
+        <ExplanationText>Set a daily reminder</ExplanationText>
         <DatePickerIOS
           date={this.state.chosenTime}
           onDateChange={this.setTime}

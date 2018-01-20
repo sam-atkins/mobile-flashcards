@@ -6,6 +6,17 @@ exports[`Settings renders correctly 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 24,
+          "paddingHorizontal": 15,
+          "paddingVertical": 15,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
   >
     Settings screen
   </Text>
@@ -37,6 +48,22 @@ exports[`Settings renders correctly 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BDC7CF",
+            "color": "#000000",
+            "fontSize": 22,
+            "marginLeft": 5,
+            "marginRight": 5,
+            "marginVertical": 10,
+            "paddingBottom": 10,
+            "paddingTop": 10,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
     >
       Notifications
     </Text>

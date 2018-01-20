@@ -1,15 +1,28 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
+import PropTypes from 'prop-types';
+import styled from 'styled-components/native';
+import InfoButton from '../Buttons/InfoButton';
+
+const StyledHeaderText = styled.Text`
+  font-size: 24;
+  padding-vertical: 15;
+  padding-horizontal: 15;
+  text-align: center;
+`;
 
 const Settings = props => (
   <View>
-    <Text>Settings screen</Text>
-    <TouchableOpacity
+    <StyledHeaderText>Settings screen</StyledHeaderText>
+    <InfoButton
+      text="Notifications"
       onPress={() => props.navigation.navigate('Notifications')}
-    >
-      <Text>Notifications</Text>
-    </TouchableOpacity>
+    />
   </View>
 );
+
+Settings.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default Settings;

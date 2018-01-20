@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewCardForm renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 15,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+            "paddingTop": 10,
+          },
+          undefined,
+        ]
+      }
+    >
+      What question would you like to add?
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      blurOnSubmit={true}
+      keyboardType="default"
+      maxLength={100}
+      onChangeText={[Function]}
+      placeholder="Question"
+      style={
+        Object {
+          "height": 40,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingHorizontal": 15,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+            "paddingTop": 10,
+          },
+          undefined,
+        ]
+      }
+    >
+      What answer would you like to add?
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      blurOnSubmit={true}
+      keyboardType="default"
+      maxLength={100}
+      onChangeText={[Function]}
+      placeholder="Answer"
+      style={
+        Object {
+          "height": 40,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#05AE54",
+            "color": "#ffffff",
+            "fontSize": 22,
+            "height": 45,
+            "marginLeft": 40,
+            "marginRight": 40,
+            "marginVertical": 10,
+            "paddingBottom": 10,
+            "paddingTop": 10,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      Submit
+    </Text>
+  </View>
+</View>
+`;
