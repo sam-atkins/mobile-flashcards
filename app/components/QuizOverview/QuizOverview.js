@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components/native';
+import PropTypes from 'prop-types';
 import ButtonWrapper from '../Buttons/ButtonWrapper';
 import PrimaryButton from '../Buttons/PrimaryButton';
 
@@ -29,7 +30,7 @@ const QuizOverview = (props) => {
   return (
     <StyledView>
       <StyledTitleText>Quiz: {title}</StyledTitleText>
-      <StyledQuestionsNumText>{questions.length} cards</StyledQuestionsNumText>
+      <StyledQuestionsNumText>{props.quizLength} cards</StyledQuestionsNumText>
       <ButtonWrapper>
         <PrimaryButton
           text="Start quiz"
@@ -44,6 +45,10 @@ const QuizOverview = (props) => {
           text="Add new question"
           onPress={() => props.navigation.navigate('NewCardForm', { title })}
         />
+        <PrimaryButton
+          text="Home"
+          onPress={() => props.navigation.navigate('Home')}
+        />
       </ButtonWrapper>
     </StyledView>
   );
@@ -51,6 +56,11 @@ const QuizOverview = (props) => {
 
 QuizOverview.propTypes = {
   navigation: PropTypes.object.isRequired,
+  quizLength: PropTypes.number.isRequired,
 };
 
-export default QuizOverview;
+const mapStateToProps = (state, ownProps) => ({
+  quizLength: state.decks[ownProps.navigation.state.params.title].quizLength,
+});
+
+export default connect(mapStateToProps)(QuizOverview);

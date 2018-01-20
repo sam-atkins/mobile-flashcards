@@ -9,10 +9,10 @@ import {
   selectQuizLength,
   selectQuestionsAndAnswers,
 } from '../../selectors/quizSelectors';
-import { manageQuizEnd } from '../../actions/quizActions';
 
 const RunQuiz = ({
   currentQuestion,
+  deckTitle,
   questionsAndAnswers,
   showAnswer,
   showQuestion,
@@ -25,6 +25,7 @@ const RunQuiz = ({
       <View>
         {showQuestion && (
           <QuestionText
+            deckTitle={deckTitle}
             question={questionsAndAnswers[currentQuestion].question}
           />
         )}
@@ -32,6 +33,7 @@ const RunQuiz = ({
           <AnswerText
             answer={questionsAndAnswers[currentQuestion].answer}
             currentQuestion={currentQuestion}
+            deckTitle={deckTitle}
             totalQuizQuestions={totalQuizQuestions}
           />
         )}
@@ -49,6 +51,7 @@ const RunQuiz = ({
 
 RunQuiz.propTypes = {
   currentQuestion: PropTypes.number.isRequired,
+  deckTitle: PropTypes.string.isRequired,
   questionsAndAnswers: PropTypes.array.isRequired,
   showAnswer: PropTypes.bool.isRequired,
   showQuestion: PropTypes.bool.isRequired,
@@ -61,6 +64,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentQuestion: state.quiz.quizNumbers.questionNumber,
   showAnswer: state.quiz.quizDisplay.toggleAnswer,
   showQuestion: state.quiz.quizDisplay.toggleQuestion,
+  deckTitle: ownProps.navigation.state.params.title,
   questionsAndAnswers: selectQuestionsAndAnswers(
     state,
     ownProps.navigation.state.params.title
@@ -73,10 +77,4 @@ const mapStateToProps = (state, ownProps) => ({
   userIncorrectScore: state.quiz.quizNumbers.quizScoreIncorrect,
 });
 
-const mapDispatchToProps = dispatch => ({
-  renderQuizScore: () => {
-    dispatch(manageQuizEnd());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(RunQuiz);
+export default connect(mapStateToProps)(RunQuiz);
