@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppStatusBar renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#292477",
+      "height": 44,
+    }
+  }
+/>
+`;

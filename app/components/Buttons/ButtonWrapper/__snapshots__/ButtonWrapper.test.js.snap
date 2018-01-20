@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonWrapper renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "marginVertical": 50,
+        "paddingBottom": 25,
+        "paddingHorizontal": 25,
+        "paddingTop": 20,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

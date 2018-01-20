@@ -10,7 +10,6 @@ import {
   manageQuizEndIncrementScore,
   manageQuizEndDecrementScore,
 } from '../../actions/quizActions';
-// import { selectQuizLength } from '../../selectors/quizSelectors';
 
 const AnswerText = ({
   answer,
