@@ -104,6 +104,8 @@ The ESLint config extends from AirBnB, with a few changes. Refer to the `.eslint
 
 Expo docs on [publishing](https://docs.expo.io/versions/latest/guides/publishing.html).
 
+There are two options to publish a project, via the SDK or XDE.
+
 #### CLI / SDK
 
 Install the `exp` command-line tool, and run the publish command:
