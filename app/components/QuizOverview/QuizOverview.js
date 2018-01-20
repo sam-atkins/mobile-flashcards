@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import ButtonWrapper from '../Buttons/ButtonWrapper';
 import PrimaryButton from '../Buttons/PrimaryButton';
-import SecondaryButton from '../Buttons/SecondaryButton';
 
 const StyledView = styled.View`
   flex: 1;
@@ -27,7 +26,7 @@ const QuizOverview = (props) => {
             })
           }
         />
-        <SecondaryButton
+        <PrimaryButton
           text="Add new question"
           onPress={() => props.navigation.navigate('NewCardForm', { title })}
         />

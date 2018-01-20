@@ -120,9 +120,10 @@ exports[`QuizOverview renders correctly 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#098BE9",
+              "backgroundColor": "#05AE54",
               "color": "#ffffff",
               "fontSize": 22,
+              "height": 45,
               "marginLeft": 40,
               "marginRight": 40,
               "marginVertical": 10,

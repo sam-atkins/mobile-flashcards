@@ -1,6 +1,6 @@
 export const APP_STATUSBAR_BACKGROUND = '#292477';
 export const BUTTON_PRIMARY_BACKGROUND = '#05AE54';
-export const BUTTON_SECONDARY_BACKGROUND = '#098BE9';
+export const BUTTON_SECONDARY_BACKGROUND = '#FF2D40';
 export const BUTTON_TEXT = '#ffffff';
 export const NAV_HEADER_BACKGROUND = '#292477';
 export const NAV_HEADER_TINT = '#fff';
