@@ -11,6 +11,7 @@ const Header = styled.Text`
 
 const SubHeader = Header.extend`
   font-size: 18;
+  padding-bottom: 10;
 `;
 
 const WelcomeText = () => (

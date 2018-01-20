@@ -29,6 +29,7 @@ exports[`HomeView renders correctly 1`] = `
         Array [
           Object {
             "fontSize": 18,
+            "paddingBottom": 10,
             "paddingHorizontal": 15,
             "paddingTop": 10,
             "textAlign": "center",
@@ -114,6 +115,7 @@ exports[`HomeView renders correctly 1`] = `
             style={
               Object {
                 "opacity": 1,
+                "paddingVertical": 10,
               }
             }
             testID={undefined}
@@ -123,6 +125,17 @@ exports[`HomeView renders correctly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
             >
               React
             </Text>
@@ -130,6 +143,17 @@ exports[`HomeView renders correctly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 16,
+                    "fontStyle": "italic",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
             >
               2
                cards
@@ -159,6 +183,7 @@ exports[`HomeView renders correctly 1`] = `
             style={
               Object {
                 "opacity": 1,
+                "paddingVertical": 10,
               }
             }
             testID={undefined}
@@ -168,6 +193,17 @@ exports[`HomeView renders correctly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
             >
               JavaScript
             </Text>
@@ -175,6 +211,17 @@ exports[`HomeView renders correctly 1`] = `
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 16,
+                    "fontStyle": "italic",
+                    "paddingHorizontal": 15,
+                    "textAlign": "center",
+                  },
+                  undefined,
+                ]
+              }
             >
               1
                cards
