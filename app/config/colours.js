@@ -1,7 +1,9 @@
 export const APP_STATUSBAR_BACKGROUND = '#292477';
 export const BUTTON_PRIMARY_BACKGROUND = '#05AE54';
 export const BUTTON_SECONDARY_BACKGROUND = '#FF2D40';
+export const BUTTON_INFO_BACKGROUND = '#BDC7CF';
 export const BUTTON_TEXT = '#ffffff';
+export const BUTTON_INFO_TEXT = '#000000';
 export const NAV_HEADER_BACKGROUND = '#292477';
 export const NAV_HEADER_TINT = '#fff';
 export const TAB_BAR_ACTIVE_TINT_IOS = '#292477';
