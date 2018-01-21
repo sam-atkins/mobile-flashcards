@@ -24,6 +24,7 @@ The app is built with React Native and was developed and tested for **iOS only**
 * [Release](#release)
   * [Publish on Expo](#publish-on-expo)
   * [Demo](#demo)
+* [License and Contributing](#license-and-contributing)
 * [Inspiration and Information](#inspiration-and-information)
 * [Expo React Native Documentation](#expo-react-native-documentation)
   * [Expo Table of Contents](#expo-table-of-contents)
@@ -34,13 +35,23 @@ The app is built with React Native and was developed and tested for **iOS only**
 
 The React Native app was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
-**Dependencies:**
+**Developer Software Dependencies:**
 
 * Yarn package manager
 * `create-react-native-app`
 * Editor / IDE
 * Expo app on a mobile device, and/or Xcode (for the iOS simulator)
 * Expo SDK or XDE
+
+**External Libraries used in this Project:**
+
+* Redux
+* React Navigation
+* Styled Components
+* Jest
+* React Prop Types
+
+#### Getting Started
 
 To get started with this repository:
 
@@ -122,6 +133,12 @@ Open the project and select publish.
 ### Demo
 
 The app is available on [Expo.io](https://expo.io/@cubiio/mobile-flashcards).
+
+## License and Contributing
+
+This project is licensed under MIT. The original course material and specification is from [Udacity.com](https://eu.udacity.com/course/react-nanodegree--nd019).
+
+This is a hobby project as part of the React Nanodegree. The project could be developed further and you can open pull requests if you would like.
 
 ## Inspiration and Information
 
