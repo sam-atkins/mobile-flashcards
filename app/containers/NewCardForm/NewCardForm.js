@@ -20,7 +20,7 @@ class NewCardForm extends Component {
       answer: this.state.answer,
     };
     this.props.addNewCard(payload);
-    this.props.navigation.navigate('QuizOverview', { title });
+    this.props.navigation.goBack();
   };
 
   render() {
