@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addNewCard } from '../../actions/deckActions';
@@ -13,6 +13,24 @@ class NewCardForm extends Component {
   };
 
   handleOnPress = () => {
+    if (this.state.question.length < 2) {
+      return Alert.alert(
+        'Your question',
+        'needs more than 2 characters.',
+        { text: 'OK' },
+        { cancelable: false }
+      );
+    }
+
+    if (this.state.answer.length < 2) {
+      return Alert.alert(
+        'Your answer',
+        'needs more than 2 characters.',
+        { text: 'OK' },
+        { cancelable: false }
+      );
+    }
+
     const { title } = this.props.navigation.state.params;
     const payload = {
       title,

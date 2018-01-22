@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addNewDeck } from '../../actions/deckActions';
@@ -12,6 +12,14 @@ class NewDeckForm extends Component {
   };
 
   handleOnPress = (payload) => {
+    if (this.state.title.length < 1) {
+      return Alert.alert(
+        'Your question',
+        'needs more than 1 character.',
+        { text: 'OK' },
+        { cancelable: false }
+      );
+    }
     const { title } = this.state;
     this.props.addNewDeck(payload);
     this.props.navigation.navigate('QuizOverview', { title });
